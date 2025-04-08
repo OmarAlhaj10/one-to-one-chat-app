@@ -27,4 +27,8 @@ public class UserService {
     public List<User> findConnectedUsers() {
         return repository.findAllByStatus(Status.ONLINE);
     }
+
+    public User findUserById(String userId) {
+        return repository.findById(userId).orElse(null);
+    }
 }
